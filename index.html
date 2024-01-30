@@ -3,28 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simple Webpage</title>
+    <title>YouTube Video and Form</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-G400DDJNVT"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+        <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-G400DDJNVT"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+    
+      gtag('config', 'G-G400DDJNVT');
+    </script>
+    <!-- YouTube Video -->
+    <div id="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/watch?v=sFav9P54JUA" frameborder="0" allowfullscreen></iframe>
+    </div>
 
-  gtag('config', 'G-G400DDJNVT');
-</script>
-    <h1>Welcome to My Webpage</h1>
+    <!-- Form -->
+    <div id="form-container">
+        <h2>Enter Your Information</h2>
+        <form action="#" method="POST">
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name" required><br>
+            <label for="age">Age:</label><br>
+            <input type="number" id="age" name="age" required><br>
+            <label for="languages">Choose a Programming Language:</label><br>
+            <select id="languages" name="languages">
+                <option value="Python">Python</option>
+                <option value="JavaScript">JavaScript</option>
+                <option value="Java">Java</option>
+                <option value="C++">C++</option>
+                <option value="Ruby">Ruby</option>
+                <option value="Swift">Swift</option>
+            </select><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 
-    <p>This is a basic webpage displaying a few messages:</p>
+    <!-- JavaScript to handle scrolling -->
+    <script>
+        window.onscroll = function() {scrollFunction()};
 
-    <ul>
-        <li>Hello, World!</li>
-        <li>This is a simple message.</li>
-        <li>Feel free to customize and add more messages!</li>
-    </ul>
-
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("form-container").style.display = "block";
+            } else {
+                document.getElementById("form-container").style.display = "none";
+            }
+        }
+    </script>
 </body>
 </html>
